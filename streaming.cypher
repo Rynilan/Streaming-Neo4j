@@ -381,40 +381,40 @@ MERGE (mindhunter:Serie:Media {
 })
 MERGE (fincher)-[:DIRECTED]->(mindhunter)
 
-MERGE (twdSeason1:Season {number: 1})
+MERGE (twdSeason1:Season {number: 1, title: "The Infection"})
 MERGE (twd)-[:HAS]->(twdSeason1)
 
-MERGE (twdEp1:Episode {number: 1, duration: "01:07:00"})
+MERGE (twdEp1:Episode {number: 1, duration: "01:07:00", title: "The start"})
 MERGE (twdSeason1)-[:HAS]->(twdEp1)
 
-MERGE (twdEp2:Episode {number: 2, duration: "00:45:00"})
+MERGE (twdEp2:Episode {number: 2, duration: "00:45:00", title: "Who...?"})
 MERGE (twdSeason1)-[:HAS]->(twdEp2)
 
-MERGE (takenSeason1:Season {number: 1})
+MERGE (takenSeason1:Season {number: 1, title: "You're taken"})
 MERGE (taken)-[:HAS]->(takenSeason1)
 
-MERGE (takenEp1:Episode {number: 1, duration: "01:30:00"})
+MERGE (takenEp1:Episode {number: 1, duration: "01:30:00", title: "Don't..."})
 MERGE (takenSeason1)-[:HAS]->(takenEp1)
 
-MERGE (takenEp2:Episode {number: 2, duration: "01:30:00"})
+MERGE (takenEp2:Episode {number: 2, duration: "01:30:00", title: "Isn't yours"})
 MERGE (takenSeason1)-[:HAS]->(takenEp2)
 
-MERGE (mindhunterSeason1:Season {number: 1})
+MERGE (mindhunterSeason1:Season {number: 1, title: "Hunger Games"})
 MERGE (mindhunter)-[:HAS]->(mindhunterSeason1)
 
-MERGE (mindhunterEp1:Episode {number: 1, duration: "01:00:00"})
+MERGE (mindhunterEp1:Episode {number: 1, duration: "01:00:00", title: "Survive"})
 MERGE (mindhunterSeason1)-[:HAS]->(mindhunterEp1)
 
-MERGE (mindhunterEp2:Episode {number: 2, duration: "01:00:00"})
+MERGE (mindhunterEp2:Episode {number: 2, duration: "01:00:00", title: "They'll come"})
 MERGE (mindhunterSeason1)-[:HAS]->(mindhunterEp2)
 
-MERGE (mindhunterSeason2:Season {number: 2})
+MERGE (mindhunterSeason2:Season {number: 2, title: "Fight for it"})
 MERGE (mindhunter)-[:HAS]->(mindhunterSeason2)
 
-MERGE (mindhunterEp21:Episode {number: 1, duration: "01:00:00"})
+MERGE (mindhunterEp21:Episode {number: 1, duration: "01:00:00", title: "It won't stop"})
 MERGE (mindhunterSeason2)-[:HAS]->(mindhunterEp21)
 
-MERGE (mindhunterEp22:Episode {number: 2, duration: "01:00:00"})
+MERGE (mindhunterEp22:Episode {number: 2, duration: "01:00:00", title: "It'll never end"})
 MERGE (mindhunterSeason2)-[:HAS]->(mindhunterEp22)
 
 MERGE (epic:Genre {name: "Épico"})
@@ -423,6 +423,7 @@ MERGE (action:Genre {name: "Ação"})
 MERGE (genre:Genre {name: "Drama"})
 MERGE (triology:Genre {name: "Trilogia"})
 MERGE (history:Genre {name: "Histórico"})
+MERGE (fantasy:Genre {name: "Fantasia"})
 
 MERGE (twd)-[:IN_GENRE]->(cience)
 MERGE (twd)-[:IN_GENRE]->(action)
@@ -440,6 +441,9 @@ MERGE (godfathernd)-[:IN_GENRE]->(genre)
 MERGE (schindler)-[:IN_GENRE]->(history)
 MERGE (twelvemans)-[:IN_GENRE]->(action)
 MERGE (liberty)-[:IN_GENRE]->(genre)
+MERGE (liberty)-[:IN_GENRE]->(fantasy)
+MERGE (rings)-[:IN_GENRE]->(fantasy)
+MERGE (ringsociety)-[:IN_GENRE]->(fantasy)
 
 MERGE (ilan:Person:User {
 	name: "Ilan Vitor",
